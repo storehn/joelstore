@@ -12,15 +12,15 @@
       "id": 1
     },
     {
-      "id": 2,
       "name": "Mando PS4 Genérico Inalámbrico",
-      "price": 1200,
-      "image": "https://m.media-amazon.com/images/I/61PzKKhHURL._AC_SL1500_.jpg",
-      "category": "gaming",
-      "badge": "Nuevo",
       "brand": "Genérico",
+      "price": 650,
       "stock": 25,
-      "description": "Control inalámbrico compatible con PlayStation 4, con vibración y conexión Bluetooth"
+      "category": "gaming",
+      "image": "https://www.radioshackla.com/media/catalog/product/4/2/423743600007_2.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:",
+      "badge": "Nuevo",
+      "description": "Control inalámbrico compatible con PlayStation 4, con vibración y conexión Bluetooth",
+      "id": 2
     },
     {
       "id": 3,
