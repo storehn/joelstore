@@ -461,6 +461,122 @@
             to { transform: rotate(360deg); }
         }
         
+        /* GitHub Config Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-container {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--box-shadow);
+            width: 90%;
+            max-width: 600px;
+            padding: 30px;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active .modal-container {
+            transform: translateY(0);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .modal-close:hover {
+            color: var(--text-color);
+        }
+        
+        .modal-body {
+            margin-bottom: 30px;
+        }
+        
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+        
+        /* GitHub Config Button */
+        .github-config-btn {
+            background: linear-gradient(135deg, #333, #24292e);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .github-config-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Status Indicator */
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .status-indicator.connected {
+            background: rgba(5, 150, 105, 0.2);
+            color: var(--success-color);
+        }
+        
+        .status-indicator.disconnected {
+            background: rgba(220, 38, 38, 0.2);
+            color: var(--danger-color);
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .form-row {
@@ -483,6 +599,10 @@
             
             .form-actions {
                 flex-direction: column;
+            }
+            
+            .login-form {
+                padding: 30px;
             }
         }
     </style>
@@ -532,10 +652,20 @@
                 <i class="fas fa-cogs"></i>
                 Panel de Administración - JoelStore
             </h1>
-            <button class="logout-btn" onclick="logout()">
-                <i class="fas fa-sign-out-alt"></i>
-                Cerrar Sesión
-            </button>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <div id="github-status" class="status-indicator disconnected">
+                    <i class="fab fa-github"></i>
+                    <span id="github-status-text">GitHub desconectado</span>
+                </div>
+                <button class="github-config-btn" onclick="openGitHubConfigModal()">
+                    <i class="fab fa-github"></i>
+                    Configurar GitHub
+                </button>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Cerrar Sesión
+                </button>
+            </div>
         </header>
 
         <div class="admin-content">
@@ -656,10 +786,56 @@
         </div>
     </div>
 
+    <!-- GitHub Config Modal -->
+    <div id="github-config-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 class="modal-title">
+                    <i class="fab fa-github"></i>
+                    Configuración de GitHub
+                </h3>
+                <button class="modal-close" onclick="closeGitHubConfigModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="github-token">Token de GitHub</label>
+                    <input type="password" id="github-token" placeholder="ghp_xxxxxxxxxxxxxxxxxx">
+                    <small style="color: var(--text-secondary); display: block; margin-top: 5px;">
+                        Necesitas un token con permisos de 'repo' para poder guardar cambios.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="github-username">Nombre de Usuario</label>
+                    <input type="text" id="github-username" placeholder="tu-usuario-github">
+                </div>
+                <div class="form-group">
+                    <label for="github-repo">Nombre del Repositorio</label>
+                    <input type="text" id="github-repo" placeholder="nombre-repositorio">
+                </div>
+                <div class="form-group">
+                    <label for="github-branch">Rama (Branch)</label>
+                    <input type="text" id="github-branch" placeholder="main" value="main">
+                </div>
+                <div class="form-group">
+                    <label for="github-path">Ruta del archivo inventario.json</label>
+                    <input type="text" id="github-path" placeholder="inventario.json" value="inventario.json">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" onclick="closeGitHubConfigModal()">Cancelar</button>
+                <button class="submit-btn" onclick="saveGitHubConfig()">
+                    <i class="fas fa-save"></i>
+                    Guardar Configuración
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
         let products = [];
         let isLoggedIn = false;
         let editingProductId = null;
+        let githubConfig = null;
 
         // Credenciales de administrador
         const ADMIN_CREDENTIALS = {
@@ -670,6 +846,7 @@
         // Comprobar sesión al cargar la página
         document.addEventListener('DOMContentLoaded', function() {
             checkSession();
+            loadGitHubConfig();
         });
 
         function checkSession() {
@@ -700,6 +877,29 @@
                 } catch (error) {
                     console.error('Error parsing session:', error);
                     localStorage.removeItem('joelstore-admin-session');
+                }
+            }
+        }
+
+        function loadGitHubConfig() {
+            const savedConfig = localStorage.getItem('joelstore-github-config');
+            if (savedConfig) {
+                try {
+                    githubConfig = JSON.parse(savedConfig);
+                    
+                    // Actualizar UI
+                    document.getElementById('github-status').className = 'status-indicator connected';
+                    document.getElementById('github-status-text').textContent = 'GitHub conectado';
+                    
+                    // Llenar el formulario modal
+                    document.getElementById('github-token').value = githubConfig.token;
+                    document.getElementById('github-username').value = githubConfig.username;
+                    document.getElementById('github-repo').value = githubConfig.repo;
+                    document.getElementById('github-branch').value = githubConfig.branch;
+                    document.getElementById('github-path').value = githubConfig.path;
+                } catch (error) {
+                    console.error('Error parsing GitHub config:', error);
+                    localStorage.removeItem('joelstore-github-config');
                 }
             }
         }
@@ -796,6 +996,17 @@
                     </div>
                 `;
                 
+                // Intentar cargar desde GitHub primero si está configurado
+                if (githubConfig) {
+                    try {
+                        await loadProductsFromGitHub();
+                        return;
+                    } catch (error) {
+                        console.error('Error loading from GitHub, falling back to local:', error);
+                    }
+                }
+                
+                // Cargar desde archivo local como respaldo
                 const response = await fetch('inventario.json?t=' + new Date().getTime());
                 if (!response.ok) {
                     throw new Error('Error cargando productos');
@@ -820,6 +1031,42 @@
                     </div>
                 `;
             }
+        }
+
+        async function loadProductsFromGitHub() {
+            if (!githubConfig) {
+                throw new Error('GitHub no configurado');
+            }
+            
+            const { token, username, repo, branch, path } = githubConfig;
+            
+            // Obtener el contenido del archivo desde GitHub
+            const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/${path}?ref=${branch}`;
+            
+            const response = await fetch(apiUrl, {
+                headers: {
+                    'Authorization': `token ${token}`,
+                    'Accept': 'application/vnd.github.v3+json'
+                }
+            });
+            
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(`GitHub API error: ${errorData.message}`);
+            }
+            
+            const data = await response.json();
+            
+            // Decodificar el contenido (está en base64)
+            const content = atob(data.content);
+            const inventoryData = JSON.parse(content);
+            
+            products = inventoryData.productos || [];
+            renderProductsList();
+            
+            // Guardar SHA para futuras actualizaciones
+            githubConfig.sha = data.sha;
+            localStorage.setItem('joelstore-github-config', JSON.stringify(githubConfig));
         }
 
         function renderProductsList() {
@@ -911,7 +1158,7 @@
                     const productIndex = products.findIndex(p => p.id === editingProductId);
                     if (productIndex !== -1) {
                         products[productIndex] = { ...productData, id: editingProductId };
-                        await saveInventoryToFile();
+                        await saveInventoryToGitHub();
                         showSuccessMessage('Producto actualizado exitosamente');
                     }
                 } else {
@@ -922,7 +1169,7 @@
                         id: newId
                     };
                     products.push(newProduct);
-                    await saveInventoryToFile();
+                    await saveInventoryToGitHub();
                     showSuccessMessage('Producto agregado exitosamente');
                 }
                 
@@ -943,7 +1190,7 @@
             const product = products.find(p => p.id === productId);
             if (product) {
                 product.stock = parseInt(newStock);
-                saveInventoryToFile();
+                saveInventoryToGitHub();
                 showNotification('Stock actualizado', 'success');
             }
         }
@@ -980,7 +1227,7 @@
             }
             
             products = products.filter(p => p.id !== productId);
-            saveInventoryToFile();
+            saveInventoryToGitHub();
             renderProductsList();
             showSuccessMessage('Producto eliminado');
         }
@@ -990,23 +1237,69 @@
             showTab('products');
         }
 
-        async function saveInventoryToFile() {
+        async function saveInventoryToGitHub() {
             const inventoryData = {
                 productos: products
             };
             
             try {
-                // En un entorno real, esto requeriría un backend
-                // Por ahora, solo guardamos en localStorage como respaldo
+                // Guardar en localStorage como respaldo
                 localStorage.setItem('joelstore-inventory-backup', JSON.stringify(inventoryData));
                 
-                // Mostrar opción de descarga
-                downloadInventoryFile();
+                if (!githubConfig) {
+                    // Si no hay configuración de GitHub, mostrar modal
+                    openGitHubConfigModal();
+                    showError('Configura GitHub para guardar los cambios');
+                    return;
+                }
                 
-                showNotification('Inventario actualizado. Archivo descargado.', 'success');
+                const { token, username, repo, branch, path, sha } = githubConfig;
+                
+                // Preparar datos para la API de GitHub
+                const content = JSON.stringify(inventoryData, null, 2);
+                const encodedContent = btoa(unescape(encodeURIComponent(content))); // Codificar a base64
+                
+                const apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/${path}`;
+                
+                const payload = {
+                    message: `Actualización de inventario - ${new Date().toLocaleString()}`,
+                    content: encodedContent,
+                    branch: branch
+                };
+                
+                // Si tenemos el SHA, lo incluimos para actualizar el archivo existente
+                if (sha) {
+                    payload.sha = sha;
+                }
+                
+                const response = await fetch(apiUrl, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${token}`,
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(`GitHub API error: ${errorData.message}`);
+                }
+                
+                const responseData = await response.json();
+                
+                // Actualizar SHA para futuras actualizaciones
+                githubConfig.sha = responseData.content.sha;
+                localStorage.setItem('joelstore-github-config', JSON.stringify(githubConfig));
+                
+                showNotification('Inventario guardado en GitHub', 'success');
             } catch (error) {
-                console.error('Error guardando inventario:', error);
-                showError('Error al guardar inventario: ' + error.message);
+                console.error('Error guardando en GitHub:', error);
+                showError('Error al guardar en GitHub: ' + error.message);
+                
+                // Ofrecer descarga local como respaldo
+                downloadInventoryFile();
             }
         }
         
@@ -1025,6 +1318,50 @@
             link.click();
             
             URL.revokeObjectURL(url);
+        }
+
+        function openGitHubConfigModal() {
+            document.getElementById('github-config-modal').classList.add('active');
+        }
+        
+        function closeGitHubConfigModal() {
+            document.getElementById('github-config-modal').classList.remove('active');
+        }
+        
+        function saveGitHubConfig() {
+            const token = document.getElementById('github-token').value.trim();
+            const username = document.getElementById('github-username').value.trim();
+            const repo = document.getElementById('github-repo').value.trim();
+            const branch = document.getElementById('github-branch').value.trim() || 'main';
+            const path = document.getElementById('github-path').value.trim() || 'inventario.json';
+            
+            if (!token || !username || !repo) {
+                showError('Por favor completa todos los campos obligatorios');
+                return;
+            }
+            
+            githubConfig = {
+                token,
+                username,
+                repo,
+                branch,
+                path
+            };
+            
+            localStorage.setItem('joelstore-github-config', JSON.stringify(githubConfig));
+            
+            // Actualizar UI
+            document.getElementById('github-status').className = 'status-indicator connected';
+            document.getElementById('github-status-text').textContent = 'GitHub conectado';
+            
+            closeGitHubConfigModal();
+            showSuccessMessage('Configuración de GitHub guardada');
+            
+            // Intentar cargar productos desde GitHub
+            loadProductsFromGitHub().catch(error => {
+                console.error('Error verificando conexión con GitHub:', error);
+                showError('Error verificando conexión con GitHub: ' + error.message);
+            });
         }
 
         function showSuccessMessage(message) {
