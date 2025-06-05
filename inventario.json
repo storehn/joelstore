@@ -1,0 +1,212 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "name": "AirPods Pro 2da Generación",
+      "price": 8500,
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQD83?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1660803972361",
+      "category": "audio",
+      "badge": "Popular",
+      "brand": "Apple",
+      "stock": 15,
+      "description": "Auriculares inalámbricos con cancelación activa de ruido y audio espacial"
+    },
+    {
+      "id": 2,
+      "name": "Mando PS4 Genérico Inalámbrico",
+      "price": 1200,
+      "image": "https://m.media-amazon.com/images/I/61PzKKhHURL._AC_SL1500_.jpg",
+      "category": "gaming",
+      "badge": "Nuevo",
+      "brand": "Genérico",
+      "stock": 25,
+      "description": "Control inalámbrico compatible con PlayStation 4, con vibración y conexión Bluetooth"
+    },
+    {
+      "id": 3,
+      "name": "Cargador iPhone Lightning Original",
+      "price": 450,
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQUE2?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1495129815011",
+      "category": "accesorios",
+      "brand": "Apple",
+      "stock": 30,
+      "description": "Cable Lightning a USB-A de 1 metro, certificado MFi"
+    },
+    {
+      "id": 4,
+      "name": "Cargador USB-C 20W",
+      "price": 350,
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MHJE3?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1603472174000",
+      "category": "accesorios",
+      "brand": "Apple",
+      "stock": 20,
+      "description": "Adaptador de corriente USB-C de 20W para carga rápida"
+    },
+    {
+      "id": 5,
+      "name": "Mouse Gaming RGB",
+      "price": 800,
+      "image": "https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_SL1001_.jpg",
+      "category": "gaming",
+      "badge": "Gaming",
+      "brand": "Redragon",
+      "stock": 12,
+      "description": "Mouse gaming con iluminación RGB, 7200 DPI y 7 botones programables"
+    },
+    {
+      "id": 6,
+      "name": "Teclado Mecánico Gaming",
+      "price": 1500,
+      "image": "https://m.media-amazon.com/images/I/81QKqOHGpJL._AC_SL1500_.jpg",
+      "category": "gaming",
+      "badge": "Premium",
+      "brand": "Redragon",
+      "stock": 8,
+      "description": "Teclado mecánico con switches azules, retroiluminación RGB y teclas anti-ghosting"
+    },
+    {
+      "id": 7,
+      "name": "Audífonos Bluetooth JBL",
+      "price": 2200,
+      "image": "https://m.media-amazon.com/images/I/51RnWJOmoYL._AC_SL1000_.jpg",
+      "category": "audio",
+      "brand": "JBL",
+      "stock": 18,
+      "description": "Audífonos inalámbricos con 20 horas de batería y sonido JBL Pure Bass"
+    },
+    {
+      "id": 8,
+      "name": "Power Bank 20000mAh",
+      "price": 950,
+      "image": "https://m.media-amazon.com/images/I/61Oa6dKNzgL._AC_SL1500_.jpg",
+      "category": "accesorios",
+      "brand": "Anker",
+      "stock": 22,
+      "description": "Batería portátil de alta capacidad con carga rápida y doble puerto USB"
+    },
+    {
+      "id": 9,
+      "name": "Webcam HD 1080p",
+      "price": 1100,
+      "image": "https://m.media-amazon.com/images/I/61U2Zq8RJOL._AC_SL1500_.jpg",
+      "category": "accesorios",
+      "brand": "Logitech",
+      "stock": 14,
+      "description": "Cámara web Full HD con micrófono integrado y enfoque automático"
+    },
+    {
+      "id": 10,
+      "name": "Soporte para Celular Ajustable",
+      "price": 280,
+      "image": "https://m.media-amazon.com/images/I/61QGGqzBIjL._AC_SL1500_.jpg",
+      "category": "accesorios",
+      "brand": "Genérico",
+      "stock": 35,
+      "description": "Soporte de escritorio ajustable compatible con smartphones y tablets"
+    },
+    {
+      "id": 11,
+      "name": "Cable HDMI 4K 2 metros",
+      "price": 320,
+      "image": "https://m.media-amazon.com/images/I/61zKzQzBiJL._AC_SL1500_.jpg",
+      "category": "accesorios",
+      "brand": "Amazon Basics",
+      "stock": 40,
+      "description": "Cable HDMI de alta velocidad compatible con 4K, HDR y Ethernet"
+    },
+    {
+      "id": 12,
+      "name": "Parlante Bluetooth Portátil",
+      "price": 1800,
+      "image": "https://m.media-amazon.com/images/I/81SgNlnFhsL._AC_SL1500_.jpg",
+      "category": "audio",
+      "badge": "Resistente al agua",
+      "brand": "JBL",
+      "stock": 16,
+      "description": "Parlante inalámbrico resistente al agua con 12 horas de reproducción"
+    },
+    {
+      "id": 13,
+      "name": "Funda iPhone 14 Pro Max",
+      "price": 380,
+      "image": "https://m.media-amazon.com/images/I/71QGqzBIjL._AC_SL1500_.jpg",
+      "category": "accesorios",
+      "brand": "Spigen",
+      "stock": 28,
+      "description": "Funda protectora transparente con refuerzo en esquinas y compatible con MagSafe"
+    },
+    {
+      "id": 14,
+      "name": "Memoria USB 64GB",
+      "price": 420,
+      "image": "https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_SL1001_.jpg",
+      "category": "almacenamiento",
+      "brand": "SanDisk",
+      "stock": 50,
+      "description": "Memoria USB 3.0 de alta velocidad con diseño compacto y resistente"
+    },
+    {
+      "id": 15,
+      "name": "Tarjeta MicroSD 128GB",
+      "price": 680,
+      "image": "https://m.media-amazon.com/images/I/81QKqOHGpJL._AC_SL1500_.jpg",
+      "category": "almacenamiento",
+      "brand": "Samsung",
+      "stock": 32,
+      "description": "Tarjeta de memoria microSDXC Clase 10 con adaptador SD incluido"
+    },
+    {
+      "id": 16,
+      "name": "Hub USB-C 7 en 1",
+      "price": 1350,
+      "image": "https://m.media-amazon.com/images/I/71QGqzBIjL._AC_SL1500_.jpg",
+      "category": "accesorios",
+      "badge": "Multifuncional",
+      "brand": "Anker",
+      "stock": 10,
+      "description": "Hub con puertos USB-A, USB-C, HDMI, lector de tarjetas y carga PD"
+    },
+    {
+      "id": 17,
+      "name": "Smartwatch Deportivo",
+      "price": 2800,
+      "image": "https://m.media-amazon.com/images/I/61U2Zq8RJOL._AC_SL1500_.jpg",
+      "category": "wearables",
+      "badge": "Deportivo",
+      "brand": "Xiaomi",
+      "stock": 12,
+      "description": "Reloj inteligente con monitor de frecuencia cardíaca, GPS y resistencia al agua"
+    },
+    {
+      "id": 18,
+      "name": "Cargador Inalámbrico 15W",
+      "price": 750,
+      "image": "https://m.media-amazon.com/images/I/61QGGqzBIjL._AC_SL1500_.jpg",
+      "category": "accesorios",
+      "brand": "Belkin",
+      "stock": 18,
+      "description": "Base de carga inalámbrica rápida compatible con iPhone y Android"
+    },
+    {
+      "id": 19,
+      "name": "Adaptador Bluetooth USB",
+      "price": 250,
+      "image": "https://m.media-amazon.com/images/I/51RnWJOmoYL._AC_SL1000_.jpg",
+      "category": "accesorios",
+      "brand": "TP-Link",
+      "stock": 45,
+      "description": "Adaptador USB Bluetooth 5.0 para PC y laptop con largo alcance"
+    },
+    {
+      "id": 20,
+      "name": "Lámpara LED con Cargador Inalámbrico",
+      "price": 1200,
+      "image": "https://m.media-amazon.com/images/I/81SgNlnFhsL._AC_SL1500_.jpg",
+      "category": "accesorios",
+      "badge": "Innovador",
+      "brand": "Genérico",
+      "stock": 8,
+      "description": "Lámpara de escritorio LED con base de carga inalámbrica integrada"
+    }
+  ]
+}
