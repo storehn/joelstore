@@ -64,17 +64,6 @@
       "description": "Tarjeta de memoria microSDXC Clase 10 con adaptador SD incluido"
     },
     {
-      "id": 17,
-      "name": "Smartwatch Deportivo",
-      "price": 2800,
-      "image": "https://m.media-amazon.com/images/I/61U2Zq8RJOL._AC_SL1500_.jpg",
-      "category": "wearables",
-      "badge": "Deportivo",
-      "brand": "Xiaomi",
-      "stock": 12,
-      "description": "Reloj inteligente con monitor de frecuencia cardÃ­aca, GPS y resistencia al agua"
-    },
-    {
       "id": 18,
       "name": "Cargador InalÃ¡mbrico 15W",
       "price": 750,
