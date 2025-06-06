@@ -44,17 +44,6 @@
       "description": "Adaptador de corriente USB-C de 20W para carga rÃ¡pida"
     },
     {
-      "id": 5,
-      "name": "Mouse Gaming RGB",
-      "price": 800,
-      "image": "https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_SL1001_.jpg",
-      "category": "gaming",
-      "badge": "Gaming",
-      "brand": "Redragon",
-      "stock": 12,
-      "description": "Mouse gaming con iluminaciÃ³n RGB, 7200 DPI y 7 botones programables"
-    },
-    {
       "id": 14,
       "name": "Memoria USB 64GB",
       "price": 420,
