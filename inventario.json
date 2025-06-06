@@ -76,16 +76,6 @@
       "description": "BaterÃ­a portÃ¡til de alta capacidad con carga rÃ¡pida y doble puerto USB"
     },
     {
-      "id": 10,
-      "name": "Soporte para Celular Ajustable",
-      "price": 280,
-      "image": "https://m.media-amazon.com/images/I/61QGGqzBIjL._AC_SL1500_.jpg",
-      "category": "accesorios",
-      "brand": "GenÃ©rico",
-      "stock": 35,
-      "description": "Soporte de escritorio ajustable compatible con smartphones y tablets"
-    },
-    {
       "id": 11,
       "name": "Cable HDMI 4K 2 metros",
       "price": 320,
