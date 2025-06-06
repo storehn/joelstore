@@ -1,14 +1,14 @@
 {
   "productos": [
     {
-      "name": "AirPods Pro 2da GeneraciÃ³n",
+      "name": "AirPods Pro 2da Generacion",
       "brand": "Apple",
       "price": 650,
       "stock": 19,
       "category": "audio",
       "image": "https://applercia.com.ar/wp-content/uploads/2023/05/l68220220704140051.png",
       "badge": "Popular",
-      "description": "Auriculares inalÃ¡mbricos con cancelaciÃ³n activa de ruido y audio espacial",
+      "description": "Auriculares inalambricos con cancelacion activa de ruido y audio espacial",
       "id": 1
     },
     {
