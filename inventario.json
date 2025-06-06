@@ -1,25 +1,25 @@
 {
   "productos": [
     {
-      "name": "AirPods Pro 2da Generación",
+      "name": "AirPods Pro 2da GeneraciÃ³n",
       "brand": "Apple",
       "price": 650,
-      "stock": 20,
+      "stock": 19,
       "category": "audio",
       "image": "https://applercia.com.ar/wp-content/uploads/2023/05/l68220220704140051.png",
       "badge": "Popular",
-      "description": "Auriculares inalámbricos con cancelación activa de ruido y audio espacial",
+      "description": "Auriculares inalÃ¡mbricos con cancelaciÃ³n activa de ruido y audio espacial",
       "id": 1
     },
     {
-      "name": "Mando PS4 Genérico Inalámbrico",
-      "brand": "Genérico",
+      "name": "Mando PS4 GenÃ©rico InalÃ¡mbrico",
+      "brand": "GenÃ©rico",
       "price": 650,
       "stock": 25,
       "category": "gaming",
       "image": "https://www.radioshackla.com/media/catalog/product/4/2/423743600007_2.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:",
       "badge": "Nuevo",
-      "description": "Control inalámbrico compatible con PlayStation 4, con vibración y conexión Bluetooth",
+      "description": "Control inalÃ¡mbrico compatible con PlayStation 4, con vibraciÃ³n y conexiÃ³n Bluetooth",
       "id": 2
     },
     {
@@ -40,7 +40,7 @@
       "category": "accesorios",
       "brand": "Apple",
       "stock": 20,
-      "description": "Adaptador de corriente USB-C de 20W para carga rápida"
+      "description": "Adaptador de corriente USB-C de 20W para carga rÃ¡pida"
     },
     {
       "id": 5,
@@ -51,28 +51,28 @@
       "badge": "Gaming",
       "brand": "Redragon",
       "stock": 12,
-      "description": "Mouse gaming con iluminación RGB, 7200 DPI y 7 botones programables"
+      "description": "Mouse gaming con iluminaciÃ³n RGB, 7200 DPI y 7 botones programables"
     },
     {
       "id": 6,
-      "name": "Teclado Mecánico Gaming",
+      "name": "Teclado MecÃ¡nico Gaming",
       "price": 1500,
       "image": "https://m.media-amazon.com/images/I/81QKqOHGpJL._AC_SL1500_.jpg",
       "category": "gaming",
       "badge": "Premium",
       "brand": "Redragon",
       "stock": 8,
-      "description": "Teclado mecánico con switches azules, retroiluminación RGB y teclas anti-ghosting"
+      "description": "Teclado mecÃ¡nico con switches azules, retroiluminaciÃ³n RGB y teclas anti-ghosting"
     },
     {
       "id": 7,
-      "name": "Audífonos Bluetooth JBL",
+      "name": "AudÃ­fonos Bluetooth JBL",
       "price": 2200,
       "image": "https://m.media-amazon.com/images/I/51RnWJOmoYL._AC_SL1000_.jpg",
       "category": "audio",
       "brand": "JBL",
       "stock": 18,
-      "description": "Audífonos inalámbricos con 20 horas de batería y sonido JBL Pure Bass"
+      "description": "AudÃ­fonos inalÃ¡mbricos con 20 horas de baterÃ­a y sonido JBL Pure Bass"
     },
     {
       "id": 8,
@@ -82,7 +82,7 @@
       "category": "accesorios",
       "brand": "Anker",
       "stock": 22,
-      "description": "Batería portátil de alta capacidad con carga rápida y doble puerto USB"
+      "description": "BaterÃ­a portÃ¡til de alta capacidad con carga rÃ¡pida y doble puerto USB"
     },
     {
       "id": 9,
@@ -92,7 +92,7 @@
       "category": "accesorios",
       "brand": "Logitech",
       "stock": 14,
-      "description": "Cámara web Full HD con micrófono integrado y enfoque automático"
+      "description": "CÃ¡mara web Full HD con micrÃ³fono integrado y enfoque automÃ¡tico"
     },
     {
       "id": 10,
@@ -100,7 +100,7 @@
       "price": 280,
       "image": "https://m.media-amazon.com/images/I/61QGGqzBIjL._AC_SL1500_.jpg",
       "category": "accesorios",
-      "brand": "Genérico",
+      "brand": "GenÃ©rico",
       "stock": 35,
       "description": "Soporte de escritorio ajustable compatible con smartphones y tablets"
     },
@@ -116,14 +116,14 @@
     },
     {
       "id": 12,
-      "name": "Parlante Bluetooth Portátil",
+      "name": "Parlante Bluetooth PortÃ¡til",
       "price": 1800,
       "image": "https://m.media-amazon.com/images/I/81SgNlnFhsL._AC_SL1500_.jpg",
       "category": "audio",
       "badge": "Resistente al agua",
       "brand": "JBL",
       "stock": 16,
-      "description": "Parlante inalámbrico resistente al agua con 12 horas de reproducción"
+      "description": "Parlante inalÃ¡mbrico resistente al agua con 12 horas de reproducciÃ³n"
     },
     {
       "id": 13,
@@ -143,7 +143,7 @@
       "category": "almacenamiento",
       "brand": "SanDisk",
       "stock": 50,
-      "description": "Memoria USB 3.0 de alta velocidad con diseño compacto y resistente"
+      "description": "Memoria USB 3.0 de alta velocidad con diseÃ±o compacto y resistente"
     },
     {
       "id": 15,
@@ -175,17 +175,17 @@
       "badge": "Deportivo",
       "brand": "Xiaomi",
       "stock": 12,
-      "description": "Reloj inteligente con monitor de frecuencia cardíaca, GPS y resistencia al agua"
+      "description": "Reloj inteligente con monitor de frecuencia cardÃ­aca, GPS y resistencia al agua"
     },
     {
       "id": 18,
-      "name": "Cargador Inalámbrico 15W",
+      "name": "Cargador InalÃ¡mbrico 15W",
       "price": 750,
       "image": "https://m.media-amazon.com/images/I/61QGGqzBIjL._AC_SL1500_.jpg",
       "category": "accesorios",
       "brand": "Belkin",
       "stock": 18,
-      "description": "Base de carga inalámbrica rápida compatible con iPhone y Android"
+      "description": "Base de carga inalÃ¡mbrica rÃ¡pida compatible con iPhone y Android"
     },
     {
       "id": 19,
@@ -199,14 +199,14 @@
     },
     {
       "id": 20,
-      "name": "Lámpara LED con Cargador Inalámbrico",
+      "name": "LÃ¡mpara LED con Cargador InalÃ¡mbrico",
       "price": 1200,
       "image": "https://m.media-amazon.com/images/I/81SgNlnFhsL._AC_SL1500_.jpg",
       "category": "accesorios",
       "badge": "Innovador",
-      "brand": "Genérico",
+      "brand": "GenÃ©rico",
       "stock": 8,
-      "description": "Lámpara de escritorio LED con base de carga inalámbrica integrada"
+      "description": "LÃ¡mpara de escritorio LED con base de carga inalÃ¡mbrica integrada"
     }
   ]
 }
