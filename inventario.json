@@ -44,14 +44,15 @@
       "description": "Adaptador de corriente USB-C de 20W para carga rÃ¡pida"
     },
     {
-      "id": 14,
       "name": "Memoria USB 64GB",
-      "price": 420,
-      "image": "https://m.media-amazon.com/images/I/61mpMH5TzkL._AC_SL1001_.jpg",
-      "category": "almacenamiento",
       "brand": "SanDisk",
+      "price": 420,
       "stock": 50,
-      "description": "Memoria USB 3.0 de alta velocidad con diseÃ±o compacto y resistente"
+      "category": "almacenamiento",
+      "image": "https://th.bing.com/th/id/OIP._qjlh2cO9XwNURQlPN1QswHaHa?rs=1&pid=ImgDetMain",
+      "badge": null,
+      "description": "Memoria USB 3.0 de alta velocidad con diseÃ±o compacto y resistente",
+      "id": 14
     },
     {
       "id": 15,
