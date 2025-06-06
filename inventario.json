@@ -76,16 +76,6 @@
       "description": "BaterÃ­a portÃ¡til de alta capacidad con carga rÃ¡pida y doble puerto USB"
     },
     {
-      "id": 13,
-      "name": "Funda iPhone 14 Pro Max",
-      "price": 380,
-      "image": "https://m.media-amazon.com/images/I/71QGqzBIjL._AC_SL1500_.jpg",
-      "category": "accesorios",
-      "brand": "Spigen",
-      "stock": 28,
-      "description": "Funda protectora transparente con refuerzo en esquinas y compatible con MagSafe"
-    },
-    {
       "id": 14,
       "name": "Memoria USB 64GB",
       "price": 420,
