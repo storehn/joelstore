@@ -76,16 +76,6 @@
       "description": "BaterÃ­a portÃ¡til de alta capacidad con carga rÃ¡pida y doble puerto USB"
     },
     {
-      "id": 11,
-      "name": "Cable HDMI 4K 2 metros",
-      "price": 320,
-      "image": "https://m.media-amazon.com/images/I/61zKzQzBiJL._AC_SL1500_.jpg",
-      "category": "accesorios",
-      "brand": "Amazon Basics",
-      "stock": 40,
-      "description": "Cable HDMI de alta velocidad compatible con 4K, HDR y Ethernet"
-    },
-    {
       "id": 12,
       "name": "Parlante Bluetooth PortÃ¡til",
       "price": 1800,
