@@ -55,14 +55,15 @@
       "id": 14
     },
     {
-      "id": 15,
       "name": "Tarjeta MicroSD 128GB",
-      "price": 680,
-      "image": "https://m.media-amazon.com/images/I/81QKqOHGpJL._AC_SL1500_.jpg",
-      "category": "almacenamiento",
       "brand": "Samsung",
+      "price": 680,
       "stock": 32,
-      "description": "Tarjeta de memoria microSDXC Clase 10 con adaptador SD incluido"
+      "category": "almacenamiento",
+      "image": "https://th.bing.com/th/id/OIP.ChSBuGjJalyKRIGB23zOkgHaE8?rs=1&pid=ImgDetMain",
+      "badge": null,
+      "description": "Tarjeta de memoria microSDXC Clase 10 con adaptador SD incluido",
+      "id": 15
     }
   ]
 }
