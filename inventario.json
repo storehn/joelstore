@@ -66,16 +66,6 @@
       "description": "Teclado mecÃ¡nico con switches azules, retroiluminaciÃ³n RGB y teclas anti-ghosting"
     },
     {
-      "id": 8,
-      "name": "Power Bank 20000mAh",
-      "price": 950,
-      "image": "https://m.media-amazon.com/images/I/61Oa6dKNzgL._AC_SL1500_.jpg",
-      "category": "accesorios",
-      "brand": "Anker",
-      "stock": 22,
-      "description": "BaterÃ­a portÃ¡til de alta capacidad con carga rÃ¡pida y doble puerto USB"
-    },
-    {
       "id": 14,
       "name": "Memoria USB 64GB",
       "price": 420,
