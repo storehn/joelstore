@@ -66,16 +66,6 @@
       "description": "Teclado mecÃ¡nico con switches azules, retroiluminaciÃ³n RGB y teclas anti-ghosting"
     },
     {
-      "id": 7,
-      "name": "AudÃ­fonos Bluetooth JBL",
-      "price": 2200,
-      "image": "https://m.media-amazon.com/images/I/51RnWJOmoYL._AC_SL1000_.jpg",
-      "category": "audio",
-      "brand": "JBL",
-      "stock": 18,
-      "description": "AudÃ­fonos inalÃ¡mbricos con 20 horas de baterÃ­a y sonido JBL Pure Bass"
-    },
-    {
       "id": 8,
       "name": "Power Bank 20000mAh",
       "price": 950,
