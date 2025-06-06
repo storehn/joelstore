@@ -76,17 +76,6 @@
       "description": "BaterÃ­a portÃ¡til de alta capacidad con carga rÃ¡pida y doble puerto USB"
     },
     {
-      "id": 12,
-      "name": "Parlante Bluetooth PortÃ¡til",
-      "price": 1800,
-      "image": "https://m.media-amazon.com/images/I/81SgNlnFhsL._AC_SL1500_.jpg",
-      "category": "audio",
-      "badge": "Resistente al agua",
-      "brand": "JBL",
-      "stock": 16,
-      "description": "Parlante inalÃ¡mbrico resistente al agua con 12 horas de reproducciÃ³n"
-    },
-    {
       "id": 13,
       "name": "Funda iPhone 14 Pro Max",
       "price": 380,
