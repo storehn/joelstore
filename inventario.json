@@ -41,7 +41,7 @@
       "category": "accesorios",
       "brand": "Apple",
       "stock": 20,
-      "description": "Adaptador de corriente USB-C de 20W para carga rÃ¡pida"
+      "description": "Adaptador de corriente USB-C de 20W para carga rÃÂ¡pida"
     },
     {
       "name": "Memoria USB 64GB",
@@ -51,7 +51,7 @@
       "category": "almacenamiento",
       "image": "https://th.bing.com/th/id/OIP._qjlh2cO9XwNURQlPN1QswHaHa?rs=1&pid=ImgDetMain",
       "badge": null,
-      "description": "Memoria USB 3.0 de alta velocidad con diseÃ±o compacto y resistente",
+      "description": "Memoria USB 3.0 de alta velocidad con diseÃÂ±o compacto y resistente",
       "id": 14
     },
     {
@@ -64,6 +64,17 @@
       "badge": null,
       "description": "Tarjeta de memoria microSDXC Clase 10 con adaptador SD incluido",
       "id": 15
+    },
+    {
+      "name": "Vidrios Templados",
+      "brand": "Global",
+      "price": 60,
+      "stock": 80,
+      "category": "accesorios",
+      "image": "https://cdn11.bigcommerce.com/s-jwqtot7a1x/images/stencil/1280x1280/products/418/1494/Single__66475.1635770163.jpg?c=2",
+      "badge": "Nuevo",
+      "description": "Protege tu celular con nuestros vidrios templados de alta calidad, resistentes a golpes y arañazos, para una pantalla más segura y duradera. ¡Compra ahora y mantén tu dispositivo como nuevo!",
+      "id": 16
     }
   ]
 }
