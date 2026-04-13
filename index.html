@@ -133,118 +133,106 @@
     
     /* Products */
     .products {
-      padding: 0 12px 100px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+      padding: 0 10px 100px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
     }
     
     .product-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 12px;
       overflow: hidden;
       transition: transform 0.2s;
+      position: relative;
     }
     
-    .product-card:active { transform: scale(0.98); }
+    .product-card:active { transform: scale(0.97); }
     
     .product-card.featured {
       border-color: var(--secondary);
       box-shadow: 0 0 20px rgba(251, 191, 36, 0.15);
+      ring: 1px solid rgba(251, 191, 36, 0.3);
+    }
+    
+    .discount-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: var(--primary);
+      color: white;
+      font-size: 9px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+      z-index: 5;
     }
     
     .featured-badge {
       background: linear-gradient(to right, var(--secondary), var(--primary));
       text-align: center;
-      padding: 4px;
-      font-size: 10px;
+      padding: 3px;
+      font-size: 9px;
       font-weight: 700;
       color: #1a1410;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.03em;
     }
     
-    .product-content { padding: 14px; }
-    
-    .product-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
+    .product-content { padding: 10px; text-align: center; }
     
     .diamond-icon {
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      margin: 0 auto 8px;
       filter: drop-shadow(0 0 8px rgba(0, 191, 255, 0.5));
     }
     
-    .product-info { flex: 1; }
-    
     .diamonds-count {
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.15rem;
       font-weight: 800;
       line-height: 1;
     }
     
     .bonus {
       color: var(--emerald);
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 11px;
+      font-weight: 700;
       margin-top: 2px;
     }
     
-    .price-info { text-align: right; }
+    .price-info { margin: 8px 0; }
     
     .original-price {
       color: var(--text-muted);
       text-decoration: line-through;
-      font-size: 11px;
+      font-size: 9px;
     }
     
     .current-price {
       font-family: 'Orbitron', sans-serif;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 700;
       color: var(--secondary);
     }
     
-    .product-tags {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-    
-    .discount-tag {
-      background: rgba(249, 115, 22, 0.2);
-      color: var(--primary);
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-size: 10px;
-      font-weight: 600;
-    }
-    
-    .total-tag { color: var(--text-muted); font-size: 10px; }
-    
     .add-btn {
       width: 100%;
-      padding: 12px;
+      padding: 8px;
       border: none;
-      border-radius: 10px;
-      font-size: 14px;
+      border-radius: 8px;
+      font-size: 12px;
       font-weight: 600;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 4px;
       transition: transform 0.2s;
     }
     
-    .add-btn:active { transform: scale(0.98); }
+    .add-btn:active { transform: scale(0.97); }
     
     .add-btn.primary {
       background: linear-gradient(to right, var(--primary), rgba(249, 115, 22, 0.8));
@@ -257,7 +245,7 @@
       border: 1px solid rgba(16, 185, 129, 0.3);
     }
     
-    .add-btn svg { width: 18px; height: 18px; fill: currentColor; }
+    .add-btn svg { width: 14px; height: 14px; fill: currentColor; }
     
     /* Info */
     .info-section {
@@ -779,12 +767,12 @@
   </div>
 
   <script>
-    const products = 
-      { id: 3, diamonds: 520, bonus: 52, price: 4.00, originalPrice: 5.00 },
-      { id: 4, diamonds: 1060, bonus: 106, price: 9.00, originalPrice: 10.00, featured: true },
-      { id: 5, diamonds: 2180, bonus: 218, price: 18.00, originalPrice: 20.00 },
-      { id: 6, diamonds: 5600, bonus: 560, price: 47.00, originalPrice: 50.00 }
-    ];
+const products = [
+  { id: 1, diamonds: 520, bonus: 52, price: 5.00, originalPrice: 6.50 },
+  { id: 2, diamonds: 1060, bonus: 106, price: 10.00, originalPrice: 12.00, featured: true },
+  { id: 3, diamonds: 2180, bonus: 218, price: 20.00, originalPrice: 25.00 },
+  { id: 4, diamonds: 5600, bonus: 560, price: 50.00, originalPrice: 55.00 }
+  ];
 
     let cart = [];
     let currentStep = 1;
@@ -804,39 +792,32 @@
       updateUI();
     }
 
-    function renderProducts() {
-      const grid = document.getElementById('productsGrid');
-      grid.innerHTML = products.map(p => {
-        const discount = Math.round(((p.originalPrice - p.price) / p.originalPrice) * 100);
-        const inCart = cart.some(i => i.id === p.id);
-        return `
-          <div class="product-card ${p.featured ? 'featured' : ''}">
-            ${p.featured ? '<div class="featured-badge">MAS VENDIDO</div>' : ''}
-            <div class="product-content">
-              <div class="product-row">
-                ${diamondSVG}
-                <div class="product-info">
-                  <div class="diamonds-count">${p.diamonds.toLocaleString()}</div>
-                  <div class="bonus">+${p.bonus} BONUS</div>
-                </div>
-                <div class="price-info">
-                  <div class="original-price">$${p.originalPrice.toFixed(2)}</div>
-                  <div class="current-price">$${p.price.toFixed(2)}</div>
-                </div>
-              </div>
-              <div class="product-tags">
-                <span class="discount-tag">-${discount}%</span>
-                <span class="total-tag">Total: ${(p.diamonds + p.bonus).toLocaleString()} diamantes</span>
-              </div>
-              <button class="add-btn ${inCart ? 'in-cart' : 'primary'}" onclick="addToCart(${p.id})">
-                ${inCart ? 
-                  `<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> En el carrito` : 
-                  `<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg> Agregar`}
-              </button>
-            </div>
-          </div>`;
-      }).join('');
-    }
+function renderProducts() {
+  const grid = document.getElementById('productsGrid');
+  grid.innerHTML = products.map(p => {
+  const discount = Math.round(((p.originalPrice - p.price) / p.originalPrice) * 100);
+  const inCart = cart.some(i => i.id === p.id);
+  return `
+  <div class="product-card ${p.featured ? 'featured' : ''}">
+  <span class="discount-badge">-${discount}%</span>
+  ${p.featured ? '<div class="featured-badge">POPULAR</div>' : ''}
+  <div class="product-content" style="padding-top: ${p.featured ? '20px' : '10px'}">
+  ${diamondSVG}
+  <div class="diamonds-count">${p.diamonds.toLocaleString()}</div>
+  <div class="bonus">+${p.bonus}</div>
+  <div class="price-info">
+  <div class="original-price">$${p.originalPrice.toFixed(2)}</div>
+  <div class="current-price">$${p.price.toFixed(2)}</div>
+  </div>
+  <button class="add-btn ${inCart ? 'in-cart' : 'primary'}" onclick="addToCart(${p.id})">
+  ${inCart ?
+  `<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Agregado` :
+  `<svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg> Agregar`}
+  </button>
+  </div>
+  </div>`;
+  }).join('');
+  }
 
     function addToCart(id) {
       const p = products.find(x => x.id === id);
